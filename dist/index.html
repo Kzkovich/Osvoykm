@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#202321">
+  <meta name="description" content="Борт — спокойный журнал расходов и событий автомобиля.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Борт — журнал автомобиля</title>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard" aria-label="Борт, главная">
+        <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 21.5h20l-2.1-6.2a3 3 0 0 0-2.8-2H11a3 3 0 0 0-2.8 2L6 21.5Z"/><path d="M5 21.5v4h3v-2h16v2h3v-4M9.2 18h13.6M10 25h12"/></svg></span>
+        <span><b>борт</b><small>ЖУРНАЛ АВТОМОБИЛЯ</small></span>
+      </a>
+      <div class="side-label">РАБОЧЕЕ ПРОСТРАНСТВО</div>
+      <nav class="primary-nav" aria-label="Основная навигация">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span>Обзор</button>
+        <button class="nav-item" data-view="history"><span class="nav-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></span>История</button>
+        <button class="nav-item" data-view="settings"><span class="nav-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="m19.4 15 .1.1 1.1.9-1.5 2.6-1.4-.5a8 8 0 0 1-1.5.9l-.2 1.5h-3l-.3-1.5a8 8 0 0 1-1.5-.9l-1.4.5-1.5-2.6 1.1-.9a7 7 0 0 1 0-1.8l-1.1-.9 1.5-2.6 1.4.5a8 8 0 0 1 1.5-.9l.3-1.5h3l.2 1.5a8 8 0 0 1 1.5.9l1.4-.5 1.5 2.6-1.1.9a7 7 0 0 1-.1 1.7Z"/></svg></span>Данные и настройки</button>
+      </nav>
+      <div class="vehicle-card"><span class="vehicle-kicker">МОЙ АВТОМОБИЛЬ</span><div class="vehicle-title"><span class="vehicle-dot"></span><b>Volvo V60</b></div><span class="vehicle-sub">2021 · бензин</span><span class="plate">А 482 МР 799</span></div>
+      <div class="side-bottom"><span class="local-lock"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 7V5a4 4 0 0 1 8 0v2m-9 0h10v7H3z"/></svg>Данные хранятся на этом устройстве</span><span class="version">BORT / CONCEPT 01</span></div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 21.5h20l-2.1-6.2a3 3 0 0 0-2.8-2H11a3 3 0 0 0-2.8 2L6 21.5Z"/><path d="M5 21.5v4h3v-2h16v2h3v-4M9.2 18h13.6"/></svg></span><b>борт</b></div>
+        <div class="crumb"><span>ГАРАЖ</span><i>/</i><b id="crumbTitle">Обзор</b></div>
+        <div class="top-actions"><span class="today" id="todayLabel"></span><button class="avatar" data-view="settings" aria-label="Данные и настройки">А</button></div>
+      </header>
+      <div id="app" class="content"></div>
+    </main>
+  </div>
+  <nav class="mobile-nav" aria-label="Основная навигация">
+    <button class="nav-item active" data-view="dashboard"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span>Обзор</button><button class="nav-item" data-view="history"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></span>История</button><button class="nav-item" data-view="settings"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM19 13a7 7 0 0 0 0-2l1.5-1.1-1.5-2.6-1.7.6a8 8 0 0 0-1.7-1L15.3 5h-3l-.3 1.9a8 8 0 0 0-1.7 1l-1.7-.6-1.5 2.6L8.6 11a7 7 0 0 0 0 2l-1.5 1.1 1.5 2.6 1.7-.6a8 8 0 0 0 1.7 1l.3 1.9h3l.3-1.9a8 8 0 0 0 1.7-1l1.7.6 1.5-2.6z"/></svg></span>Данные</button>
+  </nav>
+  <div id="dialogRoot"></div>
+  <input type="file" id="importFile" accept=".json,.csv,text/csv,application/json" hidden>
+  <script src="core.js" defer></script>
+  <script src="report.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
